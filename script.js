@@ -188,13 +188,13 @@ selects.forEach(select => {
   }
 
   // Obsługa przycisków otwierających modale
-  document.getElementById("openArtistBtn").addEventListener("click", () => {
+  document.getElementById("openContactBtn").addEventListener("click", () => {
     const modal = document.getElementById("contactModal");
     modal.style.display = "block"; // lub dodaj klasę np. "open"
     delayInputFocus("contactModal");
   });
 
-  document.getElementById("openOrganizerBtn").addEventListener("click", () => {
+  document.getElementById("openAnotherFormBtn").addEventListener("click", () => {
     const modal = document.getElementById("organizator-modal");
     modal.style.display = "block"; // lub dodaj klasę np. "open"
     delayInputFocus("organizator-modal");
