@@ -174,7 +174,7 @@ selects.forEach(select => {
     select.appendChild(option);
   });
 });
-const modalArtist = document.getElementById('ContactModal');  // cały modal, nie form
+const modalArtist = document.getElementById('contactModal');  // cały modal, nie form
 const openBtn = document.getElementById('openContactBtn');  // id twojego przycisku otwierającego modal
 
 openBtn.addEventListener('click', () => {
