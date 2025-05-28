@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StagePass</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="background-wrapper">
+    <div class="overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="StagePass Logo" />
+      </div>
+
+      <div class="user-icon" id="userIcon" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
+        <div class="user-circle">
+          <img src="user-icon.png" alt="Ikona użytkownika" />
+        </div>
+      </div>
+
+      <!-- Dropdown menu -->
+      <div class="user-menu" id="userMenu" role="menu" aria-label="Menu użytkownika">
+        <button type="button" role="menuitem" id="loginBtn">Zaloguj się</button>
+        <button type="button" role="menuitem" id="registerBtn">Zarejestruj się</button>
+      </div>
+    </nav>
+
+    <!-- Hero content -->
+    <section class="hero">
+        <div class="hero-content">
+          <h1>
+            <span>Najprostszy sposób</span>
+            <span>na zgłoszenie się</span>
+            <span>na scenę</span>
+          </h1>
+          <p>
+            <span>StagePass łączy artystów i</span>
+            <span>organizatorów wydarzeń w</span>
+            <span>jednym miejscu - szybko,</span>
+            <span>łatwo i bez komplikacji</span>
+          </p>
+      
+          <div class="buttons">
+            <button class="primary" id="openContactBtn">Jestem Artystą</button>
+            <button class="secondary" id="openAnotherFormBtn">Szukam Artystów</button>
+          </div>
+        </div>
+      </section>
+    <!-- Rating section -->
+    <section class="rating-section">
+      <div class="rating-content">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="users-count">656+ zadowolonych użytkowników</div>
+        <div class="icons">
+          <img src="google.png" alt="Ikona 1" />
+          <img src="trust.png" alt="Ikona 2" />
+          <img src="rocket.png" alt="Ikona 3" />
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- EVENT -->
+  <div class="section-separator"></div>
+  <section class="events-section">
+    <div class="event-block">
+      <div class="event-text">
+        <h2>Szansa dla każdego</h2>
+        <p>
+          StagePass zmienia zasady gry dla artystów i organizatorów.<br>
+          Uzyskaj dostęp do wielu możliwości bez względu na styl i rodzaj muzyki!
+        </p>
+        <button id="openchoice">Zgłoś się już teraz</button>
+      </div>
+      <div class="event-card">
+              <div class="slider-container">
+              <div class="slide fade"><img src="ford1.png" alt="Slide 1"></div>
+              <div class="slide fade"><img src="tokio.jpg" alt="Slide 2"></div>
+              <div class="slide fade"><img src="wino.png" alt="Slide 3"></div>
+              <div class="slide fade"><img src="jimbeam.jpg" alt="Slide 4"></div>
+              <div class="slide fade"><img src="11a.jpg" alt="Slide 5"></div>
+            </div>
+      </div>
+    </div>
+  
+    <div class="section-separator"></div>
+  
+    <div class="event-block">
+      <div class="event-text">
+        <h2>Najlepsze Festiwale i Wydarzenia</h2>
+        <p>
+          Stage Pass oferuje ogromną bazę kontaktów do festiwali i lokali, ułatwiając artyście znalezienie idealnego miejsca na występ.<br>
+          Wybierz wydarzenie lub lokal i rozpocznij rozmowę!
+        </p>
+        <button>Zarejestruj się, aby zobaczyć więcej</button>
+      </div>
+      <div class="event-card">
+        <div class="slider-container">
+          <div class="slide fade"><img src="afryka.jpg" alt="Slide 1"></div>
+          <div class="slide fade"><img src="ergo.jpg" alt="Slide 2"></div>
+          <div class="slide fade"><img src="plock.jpg" alt="Slide 3"></div>
+          <div class="slide fade"><img src="wrs.png" alt="Slide 4"></div>
+          <div class="slide fade"><img src="sad.jpg" alt="Slide 5"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-separator"></div>
+  </section>
+<!-- KONIEC EVENT -->
+  
+<!-- Modal Kontakt ARTYSTA -->
+<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle1" aria-hidden="true">
+  <div class="modal-overlay-bg"></div>
+  <div class="modal-background">
+    <div class="modal-box">
+      <div class="modal-header">
+  <!-- Logo po lewej -->
+  <img src="logo.png" alt="StagePass logo" class="modal-logo" />
+  <!-- Ikona użytkownika po prawej -->
+
+</div>
+
+      <h2 id="contactTitle" class="modal-title">Zgłoszenie jako Artysta</h2>
+
+      <form class="modal-form" id="contactForm" novalidate>
+  <div class="form-columns">
+    <div class="form-column">
+      <div class="form-group">
+        <label for="pseudonimArtystyczny">Pseudonim Artystyczny</label>
+        <input
+          type="text"
+          id="pseudonimArtystyczny"
+          name="pseudonimArtystyczny"
+          placeholder="Wpisz Pseudonim Artystyczny"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="imieNazwisko">Imię i Nazwisko</label>
+        <input
+          type="text"
+          id="imieNazwisko"
+          name="imieNazwisko"
+          placeholder="Wpisz Imię i Nazwisko"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="dataUrodzenia">Data Urodzenia</label>
+        <input type="date" id="dataUrodzenia" name="dataUrodzenia" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Wpisz email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="numerTelefonu">Numer telefonu</label>
+        <input
+          type="tel"
+          id="numerTelefonu"
+          inputmode="numeric"
+          pattern="[0-9]{9,15}"
+          name="numerTelefonu"
+          placeholder="Wpisz numer telefonu"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-column">
+      <div class="form-group">
+        <label for="kraj">Kraj</label>
+        <select id="kraj" name="kraj" class="custom-select kraj-select"required>
+          <option value="" disabled selected>Wybierz kraj</option>
+          <option value="polska">Polska</option>
+          <option value="niemcy">Niemcy</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="gatunekMuzyczny">Gatunek muzyczny</label>
+        <input
+          type="text"
+          id="gatunekMuzyczny"
+          name="gatunekMuzyczny"
+          placeholder="np. rap, jazz, rege"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="opis">Krótki opis siebie</label>
+        <textarea
+          id="opis"
+          name="opis"
+          placeholder="Opisz siebie w kilku zdaniach"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group-CV">
+  <label for="cv" class="cv-label">Załącz CV / Portfolio</label>
+  <div class="file-upload-wrapper">
+    <label for="cv" class="custom-file-label">Wybierz plik</label>
+    <input type="file" id="cv" name="cv" class="hidden-file-input" />
+    <span id="fileName">Nie wybrano pliku</span>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-button">Wyślij</button>
+</form>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Kontakt Organizator -->
+<div class="modal" id="organizator-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+  <div class="modal-overlay-bg"></div>
+  <div class="modal-background">
+    <div class="modal-box">
+      <div class="modal-header">
+        <!-- Logo po lewej -->
+        <img src="logo.png" alt="StagePass logo" class="modal-logo" />
+        <!-- Ikona użytkownika po prawej -->
+      </div>
+
+      <h2 id="contactTitle1" class="modal-title">Zgłoszenie Organizatora Wydarzenia</h2>
+
+      <form class="modal-form" id="contactForm" novalidate>
+  <div class="form-columns">
+    <div class="form-column">
+      <div class="form-group">
+        <label for="nazwaFestiwalu">Nazwa Festiwalu / Wydarzenia</label>
+        <input
+          type="text"
+          id="nazwaFestiwalu"
+          name="nazwaFestiwalu"
+          placeholder="Wpisz nazwę wydarzenia"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="organizator">Imię i Nazwisko Organizatora</label>
+        <input
+          type="text"
+          id="organizator"
+          name="organizator"
+          placeholder="Wpisz imię i nazwisko"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="dataWydarzenia">Data Wydarzenia</label>
+        <input type="date" id="dataWydarzenia" name="dataWydarzenia" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email kontaktowy</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Wpisz email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="telefon">Numer telefonu</label>
+        <input
+          type="tel"
+          id="telefon"
+          name="telefon"
+          placeholder="Wpisz numer telefonu"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-column">
+      <div class="form-group">
+        <label for="kraj">Kraj wydarzenia</label>
+        <select id="kraj" name="kraj" class="custom-select kraj-select" required>
+          <option value="" disabled selected hidden>Wybierz kraj</option>
+          <option value="polska">Polska</option>
+          <option value="niemcy">Niemcy</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="typWydarzenia">Typ wydarzenia</label>
+        <input
+          type="text"
+          id="typWydarzenia"
+          name="typWydarzenia"
+          placeholder="np. festiwal, koncert, jam session"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="opis">Krótki opis wydarzenia</label>
+        <textarea
+          id="opis"
+          name="opis"
+          placeholder="Opisz wydarzenie"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group-CV">
+        <label for="cv" class="cv-label">Załącz dodatkowe materiały (opcjonalnie)</label>
+        <div class="file-upload-wrapper">
+          <label for="cv" class="custom-file-label">Wybierz plik</label>
+          <input type="file" id="cv" name="cv" class="hidden-file-input" />
+          <span id="fileName">Nie wybrano pliku</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-button">Wyślij</button>
+</form>
+
+    </div>
+  </div>
+</div>
+<!-- Sekcja 3: Opinie użytkowników -->
+<section id="user-reviews" class="page-wrapper">
+  <h2 class="reviews-title">Co mówią użytkownicy StagePass</h2>
+
+  <div class="reviews-container">
+    <div class="review-card">
+      <img src="portret1.png" alt="User 1">
+      <span class="user-role">Artysta</span>
+      <h4>Jan Kowalski</h4>
+      <div class="stars">★★★★★</div>
+      <p>Świetna platforma do występów! Bardzo intuicyjna.</p>
+    </div>
+    <div class="review-card">
+      <img src="portret2.png" alt="User 2">
+      <span class="user-role">Organizator</span>
+      <h4>Anna Nowak</h4>
+      <div class="stars">★★★★☆</div>
+      <p>Bardzo dobrze zaprojektowana aplikacja.</p>
+    </div>
+    <div class="review-card">
+      <img src="portret3.png" alt="User 3">
+      <span class="user-role">Widz</span>
+      <h4>Piotr Zieliński</h4>
+      <div class="stars">★★★★★</div>
+      <p>Uwielbiam odkrywać nowe koncerty w okolicy!</p>
+    </div>
+  </div>
+
+  <!-- Stopka TERAZ JEST częścią sekcji -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>O nas</h4>
+        <ul>
+          <li>Team</li>
+          <li>Kariera</li>
+          <li>Pomoc & FAQs</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Dla Artystów</h4>
+        <ul>
+          <li>Znajdź koncerty</li>
+          <li>Opinie</li>
+          <li>O StagePass</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Dla Organizatorów</h4>
+        <ul>
+          <li>Dla Klubów</li>
+          <li>Dla Festiwali</li>
+          <li>Koszty</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Obserwuj nas</h4>
+        <div class="social-logos">
+          <a href="#"><img src="fb.svg" alt="Facebook"></a>
+          <a href="#"><img src="tiktok.svg" alt="TikTok"></a>
+          <a href="#"><img src="insta.svg" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
