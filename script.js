@@ -22,8 +22,8 @@ function openModal(modal, triggerBtn) {
   modal.classList.add('show');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
-  const firstInput = modal.querySelector('input, textarea, select, button');
-  if (firstInput) firstInput.focus();
+  // const firstInput = modal.querySelector('input, textarea, select, button');
+  // if (firstInput) firstInput.focus();
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal || e.target.classList.contains('modal-overlay-bg')) {
