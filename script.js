@@ -175,4 +175,27 @@ selects.forEach(select => {
   });
 });
 
+ function delayInputFocus(modalId) {
+    const modal = document.getElementById(modalId);
+    const firstInput = modal.querySelector("input, textarea, select");
 
+    setTimeout(() => {
+      // Tylko na desktopie automatycznie focusujemy
+      if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        firstInput?.focus();
+      }
+    }, 300);
+  }
+
+  // Obsługa przycisków otwierających modale
+  document.getElementById("openArtistBtn").addEventListener("click", () => {
+    const modal = document.getElementById("contactModal");
+    modal.style.display = "block"; // lub dodaj klasę np. "open"
+    delayInputFocus("contactModal");
+  });
+
+  document.getElementById("openOrganizerBtn").addEventListener("click", () => {
+    const modal = document.getElementById("organizator-modal");
+    modal.style.display = "block"; // lub dodaj klasę np. "open"
+    delayInputFocus("organizator-modal");
+  });
