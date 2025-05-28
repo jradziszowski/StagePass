@@ -174,11 +174,5 @@ selects.forEach(select => {
     select.appendChild(option);
   });
 });
-const modalArtist = document.getElementById('contactModal');  // cały modal, nie form
-const openBtn = document.getElementById('openContactBtn');  // id twojego przycisku otwierającego modal
 
-openBtn.addEventListener('click', () => {
-  modalArtist.style.display = 'block'; // pokaz modal
-  // Nie ustawiamy focus na input, żeby klawiatura się nie włączała automatycznie
-});
 
