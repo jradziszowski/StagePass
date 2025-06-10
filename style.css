@@ -1205,7 +1205,7 @@ button.secondary:hover {
 
 #loader-logo {
   width: 400px;
-  animation: logoPopFade 0.9s ease-out forwards;
+  animation: logoPopFade 1.3s ease-out forwards;
 }
 
 /* Efekt: lekkie powiększenie i zaniknięcie */
@@ -1228,7 +1228,7 @@ button.secondary:hover {
 }
 #loader-logo {
   width: 300px;
-  animation: logoPopFade 0.9s ease-out forwards;
+  animation: logoPopFade 1.3s ease-out forwards;
 }
 
 /* 📱 Mniejsze logo na telefonie */
