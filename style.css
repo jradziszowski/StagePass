@@ -1247,3 +1247,13 @@ body.loaded #loader-wrapper {
   visibility: hidden;
 }
 
+.review-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: scale(1);
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+/* Opcje w dropdownie (w większości przeglądarek) dziedziczą kolory z selecta, ale czasem trzeba wymusić: */
