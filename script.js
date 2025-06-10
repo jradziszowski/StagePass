@@ -175,4 +175,10 @@ selects.forEach(select => {
   });
 });
 
+window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.body.classList.add("loaded");
+    }, 800); // szybciej – 0.8s
+  });
+
 
