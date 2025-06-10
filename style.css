@@ -1241,4 +1241,9 @@ body.loaded #loader-wrapper {
   opacity: 0;
   visibility: hidden;
 }
-
+@media (min-width: 769px) and (max-width: 1024px) {
+  #loader-logo {
+    width: 350px;
+    animation: logoPopFade 0.8s ease-out forwards;
+  }
+}
